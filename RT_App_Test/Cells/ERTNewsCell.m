@@ -29,11 +29,6 @@ static const CGFloat CELL_BOTTOM_HEIGHT_INSET = 26.0f;
 
 @implementation ERTNewsCell
 
-- (void)awakeFromNib
-{
-
-}
-
 #pragma mark - Cell Height
 
 + (CGFloat)heightCellForText:(NSString *)text andWitdh:(CGFloat)width

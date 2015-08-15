@@ -46,7 +46,7 @@ static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
     }
 }
 
-#pragma mark - UITableView Delegate Methods
+#pragma mark - UITableView DataSource
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
@@ -69,14 +69,16 @@ static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    return [ERTNewsCell heightCellForText:self.newsArr[indexPath.row][@"summary"] andWitdh:self.tableView.frame.size.width];
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.newsArr.count;
+}
+
+#pragma mark - UITableView Delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return [ERTNewsCell heightCellForText:self.newsArr[indexPath.row][@"summary"] andWitdh:self.tableView.frame.size.width];
 }
 
 #pragma mark - Refresh Controll
@@ -86,7 +88,7 @@ static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
     [self requestNews];
 }
 
-#pragma mark -
+#pragma mark - Request News
 
 - (void)requestNews
 {
