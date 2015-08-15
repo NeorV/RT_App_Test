@@ -11,14 +11,16 @@
 #import "ERTNetworkManager.h"
 #import "NSDate+RT.h"
 #import "UIKit+AFNetworking.h"
+#import "LTBookRefreshControl.h"
 
 static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
 
-@interface ERTMainVC () <UITableViewDelegate, UITableViewDataSource>
+@interface ERTMainVC () <UITableViewDelegate, UITableViewDataSource, LTRefreshControlDelegate>
 
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic)                UINib       *cellNib;
-@property (nonatomic)                NSArray     *newsArr;
+@property (nonatomic, weak) IBOutlet UITableView                *tableView;
+@property (nonatomic)                UINib                      *cellNib;
+@property (nonatomic)                NSArray                    *newsArr;
+@property (nonatomic)                LTBookRefreshControl       *refreshControl;
 
 @end
 
@@ -27,15 +29,21 @@ static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [ERTNetworkManager requestNewsSuccess:^(NSArray *news)
-    {
-        self.newsArr = news;
-        [self.tableView reloadData];
-    }
-                                  failure:nil];
+    [self _initRefreshHeader];
+    [self requestNews];
     
     _cellNib = [UINib nibWithNibName:@"ERTNewsCell" bundle:nil];
+}
+
+- (void)_initRefreshHeader
+{
+    if (_refreshControl == nil)
+    {
+        _refreshControl = [[LTBookRefreshControl alloc] initWithScrollView:_tableView delegate:self];
+        _refreshControl.topEnabled = YES;
+        _refreshControl.inFrontOfScroll = YES;
+        _refreshControl.offsetYForBook = 20;
+    }
 }
 
 #pragma mark - UITableView Delegate Methods
@@ -69,6 +77,29 @@ static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.newsArr.count;
+}
+
+#pragma mark - Refresh Controll
+
+- (void)refreshControlDidEngageRefresh:(LTBookRefreshControl *)refreshControl
+{
+    [self requestNews];
+}
+
+#pragma mark -
+
+- (void)requestNews
+{
+    [ERTNetworkManager requestNewsSuccess:^(NSArray *news)
+     {
+         self.newsArr = news;
+         [self.tableView reloadData];
+         [self.refreshControl finishRefreshing];
+     }
+                                  failure:^(NSError *error)
+     {
+         [self.refreshControl finishRefreshing];
+     }];
 }
 
 @end
