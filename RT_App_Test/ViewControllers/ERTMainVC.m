@@ -8,6 +8,7 @@
 
 #import "ERTMainVC.h"
 #import "ERTNewsCell.h"
+#import "ERTNetworkManager.h"
 
 static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
 
@@ -15,6 +16,7 @@ static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic)                UINib       *cellNib;
+@property (nonatomic)                NSArray     *newsArr;
 
 @end
 
@@ -23,6 +25,13 @@ static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [ERTNetworkManager requestNewsSuccess:^(NSArray *news)
+    {
+        self.newsArr = news;
+        [self.tableView reloadData];
+    }
+                                  failure:nil];
     
     _cellNib = [UINib nibWithNibName:@"ERTNewsCell" bundle:nil];
 }
@@ -40,22 +49,17 @@ static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
         cell = [_cellNib instantiateWithOwner:self options:nil][0];
     }
     
-    cell.head = @"Заголовок";
-    cell.body = @"Тут будет новость";
-    cell.date = [NSDate date];
-    cell.numberOfLike = 5;
+    cell.head = self.newsArr[indexPath.row][@"title"];
+    cell.body = self.newsArr[indexPath.row][@"summary"];
+    cell.date = self.newsArr[indexPath.row][@"time"];
+    cell.numberOfLike = [self.newsArr[indexPath.row][@"like_count"] integerValue];
     
     return cell;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return self.newsArr.count;
 }
 
 @end
