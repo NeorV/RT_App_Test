@@ -10,8 +10,9 @@
 #import "ERTNewsCell.h"
 #import "ERTNetworkManager.h"
 #import "NSDate+RT.h"
-#import "UIKit+AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 #import "LTBookRefreshControl.h"
+#import "ERTNews.h"
 
 static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
 
@@ -59,12 +60,14 @@ static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
         cell = [_cellNib instantiateWithOwner:self options:nil][0];
     }
     
-    cell.head = self.newsArr[indexPath.row][@"title"];
-    cell.body = self.newsArr[indexPath.row][@"summary"];
-    cell.date = [NSDate rtStyleToDate:self.newsArr[indexPath.row][@"time"]];
-    cell.numberOfLike = [self.newsArr[indexPath.row][@"like_count"] integerValue];
-    NSURL *url = [NSURL URLWithString:self.newsArr[indexPath.row][@"image"]];
-    [cell.cellImageView setImageWithURL:url];
+    ERTNews *news = self.newsArr[indexPath.row];
+    
+    cell.head = news.title;
+    cell.body = news.summary;
+    cell.date = [NSDate rtStyleToDate:news.time];
+    cell.numberOfLike = news.likeCount.integerValue;
+    NSURL *imageUrl = [NSURL URLWithString:news.image];
+    [cell.cellImageView setImageWithURL:imageUrl];
     
     return cell;
 }
@@ -78,7 +81,8 @@ static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return [ERTNewsCell heightCellForText:self.newsArr[indexPath.row][@"summary"] andWitdh:self.tableView.frame.size.width];
+    ERTNews *news = self.newsArr[indexPath.row];
+    return [ERTNewsCell heightCellForText:news.summary andWitdh:self.tableView.frame.size.width];
 }
 
 #pragma mark - Refresh Controll

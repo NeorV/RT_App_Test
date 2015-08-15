@@ -10,6 +10,8 @@
 
 @interface ERTNetworkManager : NSObject
 
++ (void)initRestKit;
+
 + (void)requestNewsSuccess:(void (^)(NSArray* news))onSuccess
                    failure:(void (^)(NSError* error))onFailure;
 

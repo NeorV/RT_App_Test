@@ -16,6 +16,7 @@
 		A59DE4C71B7F27FE00A9AE20 /* ERTMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A59DE4C61B7F27FE00A9AE20 /* ERTMainVC.m */; };
 		A59DE4CB1B7F285800A9AE20 /* ERTNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A59DE4C91B7F285800A9AE20 /* ERTNewsCell.m */; };
 		A59DE4CC1B7F285800A9AE20 /* ERTNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59DE4CA1B7F285800A9AE20 /* ERTNewsCell.xib */; };
+		A5A33BEE1B7F66EA0035F91D /* ERTNews.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A33BED1B7F66EA0035F91D /* ERTNews.m */; };
 		A5AF685E1B7F35E0005C34FA /* ERTNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AF685D1B7F35E0005C34FA /* ERTNetworkManager.m */; };
 		A5AF68641B7F4500005C34FA /* NSDate+RT.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AF68631B7F4500005C34FA /* NSDate+RT.m */; };
 		A5AF686A1B7F52D0005C34FA /* LTBookRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AF68671B7F52D0005C34FA /* LTBookRefreshControl.m */; };
@@ -113,6 +114,8 @@
 		A59DE4C81B7F285800A9AE20 /* ERTNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ERTNewsCell.h; path = Cells/ERTNewsCell.h; sourceTree = "<group>"; };
 		A59DE4C91B7F285800A9AE20 /* ERTNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ERTNewsCell.m; path = Cells/ERTNewsCell.m; sourceTree = "<group>"; };
 		A59DE4CA1B7F285800A9AE20 /* ERTNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ERTNewsCell.xib; path = Cells/ERTNewsCell.xib; sourceTree = "<group>"; };
+		A5A33BEC1B7F66EA0035F91D /* ERTNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ERTNews.h; path = CoreData/ERTNews.h; sourceTree = "<group>"; };
+		A5A33BED1B7F66EA0035F91D /* ERTNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ERTNews.m; path = CoreData/ERTNews.m; sourceTree = "<group>"; };
 		A5AF685C1B7F35E0005C34FA /* ERTNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ERTNetworkManager.h; path = Network/ERTNetworkManager.h; sourceTree = "<group>"; };
 		A5AF685D1B7F35E0005C34FA /* ERTNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ERTNetworkManager.m; path = Network/ERTNetworkManager.m; sourceTree = "<group>"; };
 		A5AF68621B7F4500005C34FA /* NSDate+RT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+RT.h"; path = "RT/NSDate+RT.h"; sourceTree = "<group>"; };
@@ -224,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				A59DE49A1B7F23EC00A9AE20 /* RT_App_Test */,
+				A5AF686C1B7F5432005C34FA /* Resources */,
 				A59DE4991B7F23EC00A9AE20 /* Products */,
 				89163287D2950DABAAF4590C /* Pods */,
 				C75D70BB07D35DA2B7289D26 /* Frameworks */,
@@ -241,7 +245,6 @@
 		A59DE49A1B7F23EC00A9AE20 /* RT_App_Test */ = {
 			isa = PBXGroup;
 			children = (
-				A5AF686C1B7F5432005C34FA /* Resources */,
 				A59DE49F1B7F23EC00A9AE20 /* ERTAppDelegate.h */,
 				A59DE4A01B7F23EC00A9AE20 /* ERTAppDelegate.m */,
 				A59DE4C31B7F276300A9AE20 /* ViewControllers */,
@@ -249,6 +252,7 @@
 				A5AF685B1B7F35B6005C34FA /* Network */,
 				A5AF68611B7F44A5005C34FA /* RT */,
 				A5AF68651B7F52A2005C34FA /* LTBookRefreshControl */,
+				A5A33BEB1B7F66AD0035F91D /* Base */,
 				A59DE4A51B7F23EC00A9AE20 /* Main.storyboard */,
 				A59DE4A81B7F23EC00A9AE20 /* Images.xcassets */,
 				A59DE4AA1B7F23EC00A9AE20 /* LaunchScreen.xib */,
@@ -283,6 +287,15 @@
 				A59DE4CA1B7F285800A9AE20 /* ERTNewsCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		A5A33BEB1B7F66AD0035F91D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A5A33BEC1B7F66EA0035F91D /* ERTNews.h */,
+				A5A33BED1B7F66EA0035F91D /* ERTNews.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		A5AF685B1B7F35B6005C34FA /* Network */ = {
@@ -320,6 +333,7 @@
 				A5AF686D1B7F543D005C34FA /* RefreshControll */,
 			);
 			name = Resources;
+			path = RT_App_Test;
 			sourceTree = "<group>";
 		};
 		A5AF686D1B7F543D005C34FA /* RefreshControll */ = {
@@ -594,6 +608,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5AF685E1B7F35E0005C34FA /* ERTNetworkManager.m in Sources */,
+				A5A33BEE1B7F66EA0035F91D /* ERTNews.m in Sources */,
 				A59DE4CB1B7F285800A9AE20 /* ERTNewsCell.m in Sources */,
 				A59DE4A11B7F23EC00A9AE20 /* ERTAppDelegate.m in Sources */,
 				A5AF686B1B7F52D0005C34FA /* LTBookRefreshView.m in Sources */,

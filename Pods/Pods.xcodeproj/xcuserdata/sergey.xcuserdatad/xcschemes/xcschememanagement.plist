@@ -9,7 +9,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ISO8601DateFormatterValueTransformer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RKValueTransformers.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RestKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SOCKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TransitionKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8880F798F4468D6925436D4BCE0BF6A9</key>
+		<key>06009EEBC0A0CAB042155C88B5AE8E2E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E0A0843C35E4406010926441E5E9C150</key>
+		<key>0F90C906E7E0944D7D27E1F7D0506F71</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1327E0781EB2B6ED635FBE8AA187DBC6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>158117D77AED03B83733E51D2D22983B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>68E291FC1F64705132E3A6E596659EB8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A2770197345BCE1622568AECE6B8E824</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BDFEFF40A38DE017423636F73846CA82</key>
 		<dict>
 			<key>primary</key>
 			<true/>
