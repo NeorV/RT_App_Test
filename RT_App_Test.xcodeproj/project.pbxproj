@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		A59DE49E1B7F23EC00A9AE20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A59DE49D1B7F23EC00A9AE20 /* main.m */; };
-		A59DE4A11B7F23EC00A9AE20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A59DE4A01B7F23EC00A9AE20 /* AppDelegate.m */; };
-		A59DE4A41B7F23EC00A9AE20 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59DE4A31B7F23EC00A9AE20 /* ViewController.m */; };
+		A59DE4A11B7F23EC00A9AE20 /* ERTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A59DE4A01B7F23EC00A9AE20 /* ERTAppDelegate.m */; };
 		A59DE4A71B7F23EC00A9AE20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59DE4A51B7F23EC00A9AE20 /* Main.storyboard */; };
 		A59DE4A91B7F23EC00A9AE20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59DE4A81B7F23EC00A9AE20 /* Images.xcassets */; };
 		A59DE4AC1B7F23EC00A9AE20 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59DE4AA1B7F23EC00A9AE20 /* LaunchScreen.xib */; };
 		A59DE4B81B7F23EC00A9AE20 /* RT_App_TestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A59DE4B71B7F23EC00A9AE20 /* RT_App_TestTests.m */; };
+		A59DE4C71B7F27FE00A9AE20 /* ERTMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A59DE4C61B7F27FE00A9AE20 /* ERTMainVC.m */; };
+		A59DE4CB1B7F285800A9AE20 /* ERTNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A59DE4C91B7F285800A9AE20 /* ERTNewsCell.m */; };
+		A59DE4CC1B7F285800A9AE20 /* ERTNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59DE4CA1B7F285800A9AE20 /* ERTNewsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +32,19 @@
 		A59DE4981B7F23EC00A9AE20 /* RT_App_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RT_App_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59DE49C1B7F23EC00A9AE20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A59DE49D1B7F23EC00A9AE20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A59DE49F1B7F23EC00A9AE20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A59DE4A01B7F23EC00A9AE20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A59DE4A21B7F23EC00A9AE20 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A59DE4A31B7F23EC00A9AE20 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A59DE49F1B7F23EC00A9AE20 /* ERTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERTAppDelegate.h; sourceTree = "<group>"; };
+		A59DE4A01B7F23EC00A9AE20 /* ERTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERTAppDelegate.m; sourceTree = "<group>"; };
 		A59DE4A61B7F23EC00A9AE20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A59DE4A81B7F23EC00A9AE20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A59DE4AB1B7F23EC00A9AE20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A59DE4B11B7F23EC00A9AE20 /* RT_App_TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RT_App_TestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59DE4B61B7F23EC00A9AE20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A59DE4B71B7F23EC00A9AE20 /* RT_App_TestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RT_App_TestTests.m; sourceTree = "<group>"; };
+		A59DE4C51B7F27FE00A9AE20 /* ERTMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ERTMainVC.h; path = ViewControllers/ERTMainVC.h; sourceTree = "<group>"; };
+		A59DE4C61B7F27FE00A9AE20 /* ERTMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ERTMainVC.m; path = ViewControllers/ERTMainVC.m; sourceTree = "<group>"; };
+		A59DE4C81B7F285800A9AE20 /* ERTNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ERTNewsCell.h; path = Cells/ERTNewsCell.h; sourceTree = "<group>"; };
+		A59DE4C91B7F285800A9AE20 /* ERTNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ERTNewsCell.m; path = Cells/ERTNewsCell.m; sourceTree = "<group>"; };
+		A59DE4CA1B7F285800A9AE20 /* ERTNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ERTNewsCell.xib; path = Cells/ERTNewsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +86,10 @@
 		A59DE49A1B7F23EC00A9AE20 /* RT_App_Test */ = {
 			isa = PBXGroup;
 			children = (
-				A59DE49F1B7F23EC00A9AE20 /* AppDelegate.h */,
-				A59DE4A01B7F23EC00A9AE20 /* AppDelegate.m */,
-				A59DE4A21B7F23EC00A9AE20 /* ViewController.h */,
-				A59DE4A31B7F23EC00A9AE20 /* ViewController.m */,
+				A59DE49F1B7F23EC00A9AE20 /* ERTAppDelegate.h */,
+				A59DE4A01B7F23EC00A9AE20 /* ERTAppDelegate.m */,
+				A59DE4C31B7F276300A9AE20 /* ViewControllers */,
+				A59DE4C41B7F277F00A9AE20 /* Cells */,
 				A59DE4A51B7F23EC00A9AE20 /* Main.storyboard */,
 				A59DE4A81B7F23EC00A9AE20 /* Images.xcassets */,
 				A59DE4AA1B7F23EC00A9AE20 /* LaunchScreen.xib */,
@@ -117,6 +122,25 @@
 				A59DE4B61B7F23EC00A9AE20 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A59DE4C31B7F276300A9AE20 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A59DE4C51B7F27FE00A9AE20 /* ERTMainVC.h */,
+				A59DE4C61B7F27FE00A9AE20 /* ERTMainVC.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A59DE4C41B7F277F00A9AE20 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A59DE4C81B7F285800A9AE20 /* ERTNewsCell.h */,
+				A59DE4C91B7F285800A9AE20 /* ERTNewsCell.m */,
+				A59DE4CA1B7F285800A9AE20 /* ERTNewsCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A59DE4CC1B7F285800A9AE20 /* ERTNewsCell.xib in Resources */,
 				A59DE4A71B7F23EC00A9AE20 /* Main.storyboard in Resources */,
 				A59DE4AC1B7F23EC00A9AE20 /* LaunchScreen.xib in Resources */,
 				A59DE4A91B7F23EC00A9AE20 /* Images.xcassets in Resources */,
@@ -219,9 +244,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A59DE4A41B7F23EC00A9AE20 /* ViewController.m in Sources */,
-				A59DE4A11B7F23EC00A9AE20 /* AppDelegate.m in Sources */,
+				A59DE4CB1B7F285800A9AE20 /* ERTNewsCell.m in Sources */,
+				A59DE4A11B7F23EC00A9AE20 /* ERTAppDelegate.m in Sources */,
 				A59DE49E1B7F23EC00A9AE20 /* main.m in Sources */,
+				A59DE4C71B7F27FE00A9AE20 /* ERTMainVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

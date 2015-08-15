@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Sergey Yefanov. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "ERTAppDelegate.h"
 
-@interface AppDelegate ()
+@interface ERTAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation ERTAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
