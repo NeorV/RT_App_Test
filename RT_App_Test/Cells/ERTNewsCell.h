@@ -10,6 +10,8 @@
 
 @interface ERTNewsCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UIImageView *cellImageView;
+
 @property (nonatomic) UIImage *image;
 @property (nonatomic) NSString *head;
 @property (nonatomic) NSString *body;

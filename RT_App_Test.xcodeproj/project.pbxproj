@@ -18,6 +18,7 @@
 		A59DE4CB1B7F285800A9AE20 /* ERTNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A59DE4C91B7F285800A9AE20 /* ERTNewsCell.m */; };
 		A59DE4CC1B7F285800A9AE20 /* ERTNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59DE4CA1B7F285800A9AE20 /* ERTNewsCell.xib */; };
 		A5AF685E1B7F35E0005C34FA /* ERTNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AF685D1B7F35E0005C34FA /* ERTNetworkManager.m */; };
+		A5AF68641B7F4500005C34FA /* NSDate+RT.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AF68631B7F4500005C34FA /* NSDate+RT.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		A59DE4CA1B7F285800A9AE20 /* ERTNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ERTNewsCell.xib; path = Cells/ERTNewsCell.xib; sourceTree = "<group>"; };
 		A5AF685C1B7F35E0005C34FA /* ERTNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ERTNetworkManager.h; path = Network/ERTNetworkManager.h; sourceTree = "<group>"; };
 		A5AF685D1B7F35E0005C34FA /* ERTNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ERTNetworkManager.m; path = Network/ERTNetworkManager.m; sourceTree = "<group>"; };
+		A5AF68621B7F4500005C34FA /* NSDate+RT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+RT.h"; path = "RT/NSDate+RT.h"; sourceTree = "<group>"; };
+		A5AF68631B7F4500005C34FA /* NSDate+RT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+RT.m"; path = "RT/NSDate+RT.m"; sourceTree = "<group>"; };
 		F058D11AD5333A5A5302B3A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +113,7 @@
 				A59DE4C31B7F276300A9AE20 /* ViewControllers */,
 				A59DE4C41B7F277F00A9AE20 /* Cells */,
 				A5AF685B1B7F35B6005C34FA /* Network */,
+				A5AF68611B7F44A5005C34FA /* RT */,
 				A59DE4A51B7F23EC00A9AE20 /* Main.storyboard */,
 				A59DE4A81B7F23EC00A9AE20 /* Images.xcassets */,
 				A59DE4AA1B7F23EC00A9AE20 /* LaunchScreen.xib */,
@@ -170,6 +174,15 @@
 				A5AF685D1B7F35E0005C34FA /* ERTNetworkManager.m */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		A5AF68611B7F44A5005C34FA /* RT */ = {
+			isa = PBXGroup;
+			children = (
+				A5AF68621B7F4500005C34FA /* NSDate+RT.h */,
+				A5AF68631B7F4500005C34FA /* NSDate+RT.m */,
+			);
+			name = RT;
 			sourceTree = "<group>";
 		};
 		C75D70BB07D35DA2B7289D26 /* Frameworks */ = {
@@ -320,6 +333,7 @@
 				A59DE4CB1B7F285800A9AE20 /* ERTNewsCell.m in Sources */,
 				A59DE4A11B7F23EC00A9AE20 /* ERTAppDelegate.m in Sources */,
 				A59DE49E1B7F23EC00A9AE20 /* main.m in Sources */,
+				A5AF68641B7F4500005C34FA /* NSDate+RT.m in Sources */,
 				A59DE4C71B7F27FE00A9AE20 /* ERTMainVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

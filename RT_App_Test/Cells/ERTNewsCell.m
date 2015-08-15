@@ -7,6 +7,7 @@
 //
 
 #import "ERTNewsCell.h"
+#import "NSDate+RT.h"
 
 #define CELL_FONT [UIFont fontWithName:@"HelveticaNeue" size:13]
 
@@ -19,7 +20,6 @@ static const CGFloat CELL_BOTTOM_HEIGHT_INSET = 26.0f;
 
 @interface ERTNewsCell ()
 
-@property (nonatomic, weak) IBOutlet UIImageView *cellImageView;
 @property (nonatomic, weak) IBOutlet UILabel *headLabel;
 @property (nonatomic, weak) IBOutlet UILabel *bodyLabel;
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
@@ -53,12 +53,6 @@ static const CGFloat CELL_BOTTOM_HEIGHT_INSET = 26.0f;
 
 #pragma mark - Setters
 
-- (void)setImage:(UIImage *)image
-{
-    _image = image;
-    self.cellImageView.image = image;
-}
-
 - (void)setHead:(NSString *)head
 {
     _head = head;
@@ -74,7 +68,8 @@ static const CGFloat CELL_BOTTOM_HEIGHT_INSET = 26.0f;
 - (void)setDate:(NSDate *)date
 {
     _date = date;
-    self.dateLabel.text = @"10 часов назад";
+    
+    self.dateLabel.text = [date rtDateString];
 }
 
 - (void)setNumberOfLike:(NSUInteger)numberOfLike

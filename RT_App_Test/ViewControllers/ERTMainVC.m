@@ -9,6 +9,8 @@
 #import "ERTMainVC.h"
 #import "ERTNewsCell.h"
 #import "ERTNetworkManager.h"
+#import "NSDate+RT.h"
+#import "UIKit+AFNetworking.h"
 
 static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
 
@@ -51,8 +53,10 @@ static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
     
     cell.head = self.newsArr[indexPath.row][@"title"];
     cell.body = self.newsArr[indexPath.row][@"summary"];
-    cell.date = self.newsArr[indexPath.row][@"time"];
+    cell.date = [NSDate rtStyleToDate:self.newsArr[indexPath.row][@"time"]];
     cell.numberOfLike = [self.newsArr[indexPath.row][@"like_count"] integerValue];
+    NSURL *url = [NSURL URLWithString:self.newsArr[indexPath.row][@"image"]];
+    [cell.cellImageView setImageWithURL:url];
     
     return cell;
 }
