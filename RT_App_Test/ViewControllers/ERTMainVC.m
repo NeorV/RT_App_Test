@@ -57,6 +57,11 @@ static NSString * const ERT_NEWS_CELL_IDENTIFER = @"ERT_NEWS_CELL_IDENTIFER";
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return [ERTNewsCell heightCellForText:self.newsArr[indexPath.row][@"summary"] andWitdh:self.tableView.frame.size.width];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.newsArr.count;

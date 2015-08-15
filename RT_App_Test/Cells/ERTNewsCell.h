@@ -16,4 +16,6 @@
 @property (nonatomic) NSDate *date;
 @property (nonatomic) NSUInteger numberOfLike;
 
++ (CGFloat)heightCellForText:(NSString *)text andWitdh:(CGFloat)width;
+
 @end

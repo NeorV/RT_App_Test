@@ -8,6 +8,15 @@
 
 #import "ERTNewsCell.h"
 
+#define CELL_FONT [UIFont fontWithName:@"HelveticaNeue" size:13]
+
+static const CGFloat CELL_LEFT_OFFSET_BODY = 12.0f;
+static const CGFloat CELL_RIGHT_OFFSET_BODY = 12.0f;
+
+static const CGFloat CELL_BODY_HEIGHT_INSET = 20.0f;
+static const CGFloat CELL_HEADE4_HEIGHT_INSET = 50.0f;
+static const CGFloat CELL_BOTTOM_HEIGHT_INSET = 26.0f;
+
 @interface ERTNewsCell ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *cellImageView;
@@ -22,9 +31,25 @@
 
 - (void)awakeFromNib
 {
-    // Initialization code
+
 }
 
+#pragma mark - Cell Height
+
++ (CGFloat)heightCellForText:(NSString *)text andWitdh:(CGFloat)width
+{
+    CGFloat labelWidth = width - (CELL_LEFT_OFFSET_BODY + CELL_RIGHT_OFFSET_BODY);
+    CGSize constraint = CGSizeMake(labelWidth, 20000.0f);
+    NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:text
+                                                                         attributes:@{
+                                                                                      NSFontAttributeName:CELL_FONT}];
+    
+    CGRect rect = [attributedText boundingRectWithSize:constraint
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                               context:nil];
+    
+    return rect.size.height + CELL_BODY_HEIGHT_INSET + CELL_HEADE4_HEIGHT_INSET + CELL_BOTTOM_HEIGHT_INSET;
+}
 
 #pragma mark - Setters
 
@@ -55,7 +80,7 @@
 - (void)setNumberOfLike:(NSUInteger)numberOfLike
 {
     _numberOfLike = numberOfLike;
-    self.numberOfLikeLabel.text = [NSString stringWithFormat:@"%ld", numberOfLike];
+    self.numberOfLikeLabel.text = [NSString stringWithFormat:@"Оценили: %ld", numberOfLike];
 }
 
 @end
